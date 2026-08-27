@@ -11,7 +11,7 @@ export class ProductService {
   private http = inject(HttpClient);
   private apiUrl = 'https://dummyjson.com/PRODUCTS';
 
-  public getProducts(): Observable<ProductInterface> {
-    return this.http.get<ProductInterface>(this.apiUrl);
+  public getProducts(): Observable<{ products: ProductInterface[] }> {
+    return this.http.get<{ products: ProductInterface[] }>(this.apiUrl);
   }
 }
